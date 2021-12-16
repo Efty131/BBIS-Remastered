@@ -4,94 +4,216 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-    <title>Document</title>
+    <title>Pricing table</title>
     <!--   Links     -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+            extend: {
+                colors: {
+                clifford: '#da373d',
+                },
+            },
+            fontFamily:{
+                'icon':['"Font Awesome 5 Free"'],
+            }
+
+            }
+        }
+    </script>
+  
+    <style type="text/tailwindcss">
+    .table{
+        @apply pb-5 relative text-center bg-white rounded-lg transition duration-300 border-2  border-[#6cc6cb]/30;
+    }
+
+    .title{
+        @apply before:content-[""] before:absolute before:h-[200px] before:w-[280px] before:-bottom-[175px] before:-left-[46px] before:bg-white before:rounded-full before:transform before:-rotate-90 text-2xl relative overflow-hidden text-white font-semibold pt-10 pb-40 bg-gradient-to-r from-[#eae5e9] to-[#6cc6cb] after:content-[""] after:absolute after:h-[200px] after:w-[280px] after:top-[150px] after:-right-[70px] after:bottom-auto after:left-auto after:bg-white after:rounded-full after:transform after:-rotate-45;
+    }
+    .title2{
+        @apply bg-gradient-to-r from-[#113bdf] to-[#00d4ff];
+    }
+    .title3{
+        @apply bg-gradient-to-r from-[#00ff44] to-[#d0e4cc];
+    }
+    .title6{
+        @apply bg-gradient-to-r from-[#113bdf] to-[#00d4ff];
+    }
+    .title5{
+        @apply bg-gradient-to-r from-[#00ff44] to-[#d0e4cc];
+    }
+
+    .price{
+        @apply w-[120px] h-[120px] absolute top-[100px] left-[50%] bg-white text-[#404040] inline-block py-8 text-2xl font-bold rounded-full  transition duration-300 leading-relaxed transform -translate-x-[50%]; 
+    }
+    .price-1{
+        @apply ring-4 ring-[#6cc6cb]
+    }
+    .price-2{
+        @apply ring-4 ring-[#113bdf]/60;
+    }
+    .price-3{
+        @apply ring-4 ring-[#00ff44]/60;
+    }
+    .price-4{
+        @apply ring-4 ring-[#6cc6cb]
+    }
+    .price-5{
+        @apply ring-4 ring-[#00ff44]/60;
+    }
+    .price-6{
+        @apply ring-4 ring-[#113bdf]/60;
+    }
+    .table:hover .price{
+        @apply text-white bg-gradient-to-r from-[#113bdf] to-[#00d4ff];
+    }
+    .table:hover .price-1{
+        @apply text-white bg-gradient-to-r from-[#E7E5E9] to-[#6cc6cb];
+    }
+    .table:hover .price-3{
+        @apply text-white bg-gradient-to-r from-[#00ff44] to-[#d0e4cc];
+    }
+    .table:hover .price-4{
+        @apply text-white bg-gradient-to-r from-[#E7E5E9] to-[#6cc6cb];
+    }
+    .table:hover .price-5{
+        @apply text-white bg-gradient-to-r from-[#00ff44] to-[#d0e4cc];
+    }
+    .month{
+        @apply block text-lg text-gray-600 font-medium leading-none;
+    }
+    .table:hover .month{
+        @apply text-white;
+    }
+    .content{
+        @apply m-5 text-left transition duration-300;
+    }
+    .content li{
+        @apply py-2 pl-10 relative text-gray-900 text-lg font-medium tracking-normal before:content-['\f00c'] before:h-[24px] before:w-[24px] before:font-bold before:leading-none before:rounded-full before:text-[#6cc6cb] before:border-2 before:border-[#6cc6cb] before:text-center before:absolute before:top-[50%] before:left-[12px] before:transform before:-translate-y-[50%];
+    }
+    .content1 li{
+        @apply before:text-[#77C8CD] before:border-2 before:border-[#77C8CD]
+    }
+    .content2 li{
+        @apply before:text-[#113bdf] before:border-2 before:border-[#113bdf]
+    }
+    .content3 li{
+        @apply before:text-[#00ff44] before:border-2 before:border-[#00ff44]
+    }
+    .content5 li{
+        @apply before:text-[#00ff44] before:border-2 before:border-[#00ff44]
+    }
+    .content6 li{
+        @apply before:text-[#113bdf] before:border-2 before:border-[#113bdf]
+    }
+
+    .content li::before{
+        @apply font-icon;
+    }
+    .btn:hover{
+        @apply text-green-500 scale-125 font-bold;
+    }
+    </style>
+
 </head>
-<body>
+<body class="">
     
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:gap-12 m-8
       gap-6">
           <!--        Pricing Table           -->
                <div class="table">
                    <h3 class="title">Package 1</h3>
-                   <div class="price">
-                      <!-- <span style="font-size: 2rem;">৳</span>-->500 BDT
+                   <div class="price price-1">
+                      500 BDT
                         <span class="month">/Month</span>
                    </div>
-                   <ul class="content">
+                   <ul class="content content1">
                        <li class="list">Bandwith 8Mbps</li>
                        <li class="list">Youtube Unlimited</li>
                        <li class="list">FTP 100Mbps</li>
                        <li class="list">Support 24/7</li>
                    </ul>
-                   <a href="#">ORDER NOW</a>
+                   <button class="btn border-2 border-y-teal-400 p-2 rounded-2xl">ORDER NOW</button>
                </div>
                <!--       Table 2          -->
                <div class="table">
-                <h3 class="title">Package 1</h3>
-                <div class="price">
-                   <!-- <span style="font-size: 2rem;">৳</span>-->500 BDT
+                <h3 class="title title2">Package 2</h3>
+                <div class="price price-2">
+                   600 BDT
                      <span class="month">/Month</span>
                 </div>
-                <ul class="content">
-                    <li class="list">Bandwith 8Mbps</li>
+                <ul class="content content2">
+                    <li class="list">Bandwith 10Mbps</li>
                     <li class="list">Youtube Unlimited</li>
                     <li class="list">FTP 100Mbps</li>
                     <li class="list">Support 24/7</li>
                 </ul>
-                <a href="#">ORDER NOW</a>
+                <button class="btn border-2 border-y-blue-400 p-2 rounded-2xl">ORDER NOW</button>
             </div>
             <!--       Table 3          -->
             <div class="table">
-                <h3 class="title">Package 1</h3>
-                <div class="price">
-                   <!-- <span style="font-size: 2rem;">৳</span>-->500 BDT
+                <h3 class="title title3">Package 3</h3>
+                <div class="price price-3">
+                   800 BDT
                      <span class="month">/Month</span>
                 </div>
-                <ul class="content">
-                    <li class="list">Bandwith 8Mbps</li>
+                <ul class="content content3">
+                    <li class="list">Bandwith 15Mbps</li>
                     <li class="list">Youtube Unlimited</li>
                     <li class="list">FTP 100Mbps</li>
                     <li class="list">Support 24/7</li>
                 </ul>
-                <a href="#">ORDER NOW</a>
+                <button class="btn border-2 border-y-green-400 p-2 rounded-2xl">ORDER NOW</button>
             </div>
             <!--        Table 4              -->
             <div class="table">
-                <h3 class="title">Package 1</h3>
-                <div class="price">
-                   <!-- <span style="font-size: 2rem;">৳</span>-->500 BDT
+                <h3 class="title title4">Package 4</h3>
+                <div class="price price-4">
+                   1000 BDT
                      <span class="month">/Month</span>
                 </div>
-                <ul class="content">
-                    <li class="list">Bandwith 8Mbps</li>
+                <ul class="content content4">
+                    <li class="list">Bandwith 20Mbps</li>
                     <li class="list">Youtube Unlimited</li>
                     <li class="list">FTP 100Mbps</li>
                     <li class="list">Support 24/7</li>
                 </ul>
-                <a href="#">ORDER NOW</a>
+                <button class="btn border-2 border-y-teal-400 p-2 rounded-2xl">ORDER NOW</button>
             </div>
             <!--         Table 5                -->
             <div class="table">
-                <h3 class="title">Package 1</h3>
-                <div class="price">
-                   <!-- <span style="font-size: 2rem;">৳</span>-->500 BDT
+                <h3 class="title title5">Package 5</h3>
+                <div class="price price-5">
+                   1500 BDT
                      <span class="month">/Month</span>
                 </div>
-                <ul class="content">
-                    <li class="list">Bandwith 8Mbps</li>
+                <ul class="content content5">
+                    <li class="list">Bandwith 30Mbps</li>
                     <li class="list">Youtube Unlimited</li>
                     <li class="list">FTP 100Mbps</li>
                     <li class="list">Support 24/7</li>
                 </ul>
-                <a href="#">ORDER NOW</a>
+                <button class="btn border-2 border-y-green-400 p-2 rounded-2xl">ORDER NOW</button>
+            </div>
+            <!--         Table 6                -->
+            <div class="table">
+                <h3 class="title title6">Package 6</h3>
+                <div class="price price-6">
+                   2000 BDT
+                     <span class="month">/Month</span>
+                </div>
+                <ul class="content content6">
+                    <li class="list">Bandwith 40Mbps</li>
+                    <li class="list">Youtube Unlimited</li>
+                    <li class="list">FTP 100Mbps</li>
+                    <li class="list">Support 24/7</li>
+                </ul>
+                <button class="btn border-2 border-y-blue-400 p-2 rounded-2xl">ORDER NOW</button>
             </div>
 
       </div>
+    <script  src="script.js"></script>
 </body>
 </html>
